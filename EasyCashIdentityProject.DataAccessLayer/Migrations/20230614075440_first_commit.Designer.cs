@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EasyCashIdentityProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230608175618_mig_add_relation_customerAccount_appUser")]
-    partial class mig_add_relation_customerAccount_appUser
+    [Migration("20230614075440_first_commit")]
+    partial class first_commit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,6 +72,9 @@ namespace EasyCashIdentityProject.DataAccessLayer.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ConfirmCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("District")
                         .IsRequired()
